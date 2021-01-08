@@ -1,0 +1,25 @@
+<p *ngIf="carName" [style]="newStyle">home works! {{ carName }}</p>
+
+<div class="papa">
+  <h1>This is h1 then what?</h1>
+</div>
+<ul>
+  <li *ngFor="let car of cars">{{ car.name }}</li>
+</ul>
+<!-- <form (submit)="addCar($event)"> -->
+<label for="new-car">Add new car</label>
+<input
+  type="text"
+  id="new-car"
+  class="form-control"
+  [(ngModel)]="carName"
+  placeholder="car name - two-way data-binding"
+/>
+<button class="btn btn-primary" (click)="addCar($event)">Add a new car</button>
+<!-- </form> -->
+<input
+  type="text"
+  class="form-control"
+  (keyup)="onHandleChange($event)"
+  placeholder="display one way data-binding"
+/>
